@@ -1,8 +1,8 @@
 class Batipanel < Formula
   desc "AI-powered terminal workspace manager for tmux"
   homepage "https://github.com/batiai/batipanel"
-  url "https://github.com/batiai/batipanel/archive/refs/tags/v0.3.0.tar.gz"
-  sha256 "0019dfc4b32d63c1392aa264aed2253c1e0c2fb09216f8e2cc269bbfb8bb49b5"
+  url "https://github.com/batiai/batipanel/archive/refs/tags/v0.4.36.tar.gz"
+  sha256 "cab187827e0caece82c53f77fe43c2a98cf9c0792846a271de931e8324b6eabc"
   license "MIT"
 
   depends_on "tmux"
@@ -18,10 +18,14 @@ class Batipanel < Formula
     pkgshare.install "bin/start.sh"
     (pkgshare/"lib").install Dir["lib/*.sh"]
     pkgshare.install "VERSION"
+    pkgshare.install "install.sh"
+    pkgshare.install "uninstall.sh"
     (pkgshare/"layouts").install Dir["layouts/*.sh"]
-    (pkgshare/"config").install "config/tmux.conf"
+    (pkgshare/"config").install "config/tmux.conf", "config/tmux-powerline.conf"
+    (pkgshare/"config/btop").install "config/btop/btop.conf"
+    (pkgshare/"scripts/install").install Dir["scripts/install/*.sh"]
     (pkgshare/"completions").install "completions/batipanel.bash", "completions/_batipanel.zsh"
-    (pkgshare/"examples").install "examples/project.sh"
+    (pkgshare/"examples").install Dir["examples/*.sh"]
 
     # wrapper: version-aware sync to ~/.batipanel/ on every invocation
     (bin/"batipanel").write <<~SH
