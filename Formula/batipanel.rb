@@ -1,8 +1,8 @@
 class Batipanel < Formula
   desc "AI-powered terminal workspace manager for tmux"
   homepage "https://github.com/batiai/batipanel"
-  url "https://github.com/batiai/batipanel/archive/refs/tags/v0.4.39.tar.gz"
-  sha256 "fda0d32c96083957362c621dc8be0111614e4c6428183ca1cdbec5168d2319e1"
+  url "https://github.com/batiai/batipanel/archive/refs/tags/v0.4.40.tar.gz"
+  sha256 "0226d2bb75e7fb4fd659df64b6c9e5d1a47a57dbce00668971d85a8ef8bf84c3"
   license "MIT"
 
   depends_on "tmux"
